@@ -1,0 +1,37 @@
+.content {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.header1 {
+    font-variant: small-caps;
+    color: blueviolet;
+}
+
+.intro {
+    border: blueviolet solid 1px;
+    float: left;
+    width: 80%;
+    padding: 10px;
+    background-color: rgba(138, 43, 226, 0.25);
+}
+
+.table, th, td {
+    border-style: groove;
+    border-width: 2px;
+    border-color: black;
+    padding: 5px;
+    margin: 17px;
+}
+
+.table {
+    float: left;
+    border-color: blueviolet;
+    border-style: groove;
+    border-width: 19px;
+}
+
+th, td {
+    background-color: white;
+}
