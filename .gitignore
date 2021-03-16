@@ -1,11 +1,5 @@
-Report.docx
-demo_code.jpg
-demo_browser.jpg
-design_sell.docx
-output.jpg
-1973267_AneriDalal_DesignSell.zip
-team_budget_planner.docx
-index.jpg
-manager.jpg
-team.jpg
-1973267_AneriDalal_TeamBudgetPlanner.zip
+*.docx
+*.jpg
+*.zip
+*.png
+*.gif
