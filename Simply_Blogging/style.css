@@ -1,0 +1,9 @@
+.fitImage {
+    width: 100%;
+    object-fit: cover;
+    /* height: 300px; */
+}
+
+.col-6{
+    border: solid black 2px;
+}

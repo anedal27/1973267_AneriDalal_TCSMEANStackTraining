@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container" onload="addToPage()">
+<body class="container" onload="loadAllBlogs()">
     <header>
         <h1>Simply Blogging</h1>
     </header>
@@ -21,7 +21,7 @@
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contacts</a></li>
     </ul>
-    <hr/>
+    <hr />
     <form>
         <label>Title</label>
         <input type="text" id="title" />
@@ -31,13 +31,9 @@
         <input type="file" id="image">
         <input type="button" value="Add Blog" onclick="addBlog()">
     </form>
-    <hr/>
+    <hr />
     <div id="allBlogs" class="row">
-        <!-- <div class="col">
-            <div id="blogTitle"></div>
-            <div id="blogArt"></div>
-            <img src="" id="blogImage"></img>
-        </div> -->
+
     </div>
 
     <script src="script.js"></script>

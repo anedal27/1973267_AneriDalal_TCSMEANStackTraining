@@ -3,12 +3,12 @@ var singleBlog = {};
 
 function addBlog() {
     var data = readFormData();
-    blogObjs.unshift(data);
+    blogObjs.push(data);
     // console.log(blogObjs);
     storeInSession();
     // var blogs = JSON.parse(retrieveFromSession());
     // console.log(blogs);
-    addToPage();
+    addNewBlog(data);
 }
 
 function readFormData() {
@@ -34,7 +34,43 @@ function retrieveFromSession() {
     return obj;
 }
 
-function addToPage() {
+function addNewBlog(blog) {
+    // console.log(blog);
+
+    // select div tag where all blogs will be located
+    var allBlogs = document.getElementById("allBlogs");
+
+    // create a new column which will contain a single blog
+    var newCol = document.createElement('div');
+    newCol.className = 'col-6';
+
+    // create a div tag where the title will go
+    var titleDiv = document.createElement('div');
+    titleDiv.id = "blogTitle";
+    titleDiv.innerHTML = blog.title;
+    newCol.appendChild(titleDiv);
+
+    // create a div tag where the article will go
+    var artDiv = document.createElement('div');
+    artDiv.id = "blogArt";
+    artDiv.innerHTML = blog.art;
+    newCol.appendChild(artDiv);
+
+    // create an img tag where the image will go
+    if (blog.image != "none") {
+        var imgTag = document.createElement('img');
+        imgTag.id = "blogImage";
+        imgTag.src = blog.image;
+        imgTag.className = "fitImage"
+        // imgTag.height = 200;
+        newCol.appendChild(imgTag);
+    }
+
+    // append newCol to allBlogs
+    allBlogs.appendChild(newCol);
+}
+
+function loadAllBlogs() {
     var blogs = [];
     if(JSON.parse(retrieveFromSession()) != null) {
         blogs = JSON.parse(retrieveFromSession());
@@ -44,18 +80,20 @@ function addToPage() {
         var blog = blogs[i];
         console.log(blog);
 
-        // select div tag where all blogs will be located
-        var allBlogs = document.getElementById("allBlogs");
+        addNewBlog(blog);
 
-        // create a new column which will contain a single blog
-        var newCol = document.createElement('div');
-        newCol.className = 'col';
+        // // select div tag where all blogs will be located
+        // var allBlogs = document.getElementById("allBlogs");
 
-        // create a div tag where the title will go
-        var titleDiv = document.createElement('div');
-        titleDiv.id = "blogTitle";
-        titleDiv.innerHTML = blog.title;
-        newCol.appendChild(titleDiv);
+        // // create a new column which will contain a single blog
+        // var newCol = document.createElement('div');
+        // newCol.className = 'col';
+
+        // // create a div tag where the title will go
+        // var titleDiv = document.createElement('div');
+        // titleDiv.id = "blogTitle";
+        // titleDiv.innerHTML = blog.title;
+        // newCol.appendChild(titleDiv);
 
         // // create a div tag where the article will go
         // var artDiv = document.createElement('div');
@@ -68,8 +106,11 @@ function addToPage() {
         //     var imgTag = document.createElement('img');
         //     imgTag.id = "blogImage";
         //     imgTag.src = blog.image;
+        //     imgTag.height = 200;
         //     newCol.appendChild(imgTag);
         // }
-        allBlogs.appendChild(newCol);
+
+        // // append newCol to allBlogs
+        // allBlogs.appendChild(newCol);
     }
 }
