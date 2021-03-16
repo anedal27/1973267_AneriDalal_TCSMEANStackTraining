@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container">
+<body class="container" onload="addToPage()">
     <header>
         <h1>Simply Blogging</h1>
     </header>
@@ -32,12 +32,12 @@
         <input type="button" value="Add Blog" onclick="addBlog()">
     </form>
     <hr/>
-    <div class="row">
-        <div class="col">
+    <div id="allBlogs" class="row">
+        <!-- <div class="col">
             <div id="blogTitle"></div>
             <div id="blogArt"></div>
             <img src="" id="blogImage"></img>
-        </div>
+        </div> -->
     </div>
 
     <script src="script.js"></script>
