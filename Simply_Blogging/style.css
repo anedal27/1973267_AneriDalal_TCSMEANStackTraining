@@ -1,9 +1,70 @@
-.fitImage {
-    width: 100%;
-    object-fit: cover;
-    /* height: 300px; */
+.container {
+    border: 2px solid red;
 }
 
-.col-6{
-    border: solid black 2px;
+header {
+    border: 2px solid orange;
+    background-color: orange;
+    text-align: center;
+}
+
+#nav {
+    border: 2px solid yellow;
+    background-color: yellow;
+    /* height: 50px; */
+    /* margin-top: 10px; */
+}
+
+#nav ul { 
+    border: 2px solid yellowgreen;
+    background-color: yellowgreen;
+    /* height: 50px; */
+    /* margin-top: 10px; */
+}
+
+#nav ul li {
+    border: 2px solid green;
+    background-color: green;
+}
+
+#nav ul li a {
+    border: 2px solid teal;
+    background-color: teal;
+}
+
+#form {
+    border: 2px solid aqua;
+    background-color: aqua;
+}
+
+.form-group {
+    border: 2px solid blue;
+    background-color: blue;
+}
+
+#allBlogs {
+    border: 2px solid blueviolet;
+    background-color: blueviolet;
+}
+
+.row {
+    border: 2px solid purple;
+    background-color: purple;
+}
+
+.blogTitle {
+    border: 2px solid gray;
+    background-color: gray;
+}
+
+.blogArt {
+    border: 2px solid brown;
+    background-color: brown;
+}
+
+.blogImage {
+    width: 100%;
+    object-fit: cover;
+    border: 2px solid black;
+    background-color: black;
 }

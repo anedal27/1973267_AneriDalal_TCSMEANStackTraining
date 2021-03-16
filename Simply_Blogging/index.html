@@ -15,27 +15,34 @@
     <header>
         <h1>Simply Blogging</h1>
     </header>
-    <ul>
-        <li><a href="#">Add Blog</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contacts</a></li>
-    </ul>
-    <hr />
-    <form>
-        <label>Title</label>
-        <input type="text" id="title" />
-        <label>Article</label>
-        <textarea id="art"></textarea>
-        <label>Image</label>
-        <input type="file" id="image">
-        <input type="button" value="Add Blog" onclick="addBlog()">
-    </form>
-    <hr />
-    <div id="allBlogs" class="row">
-
+    <div id="nav">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Add Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contacts</a>
+            </li>
+        </ul>
     </div>
-
+    <div id="form">
+        <form class="form-group">
+            <label>Title</label>
+            <input type="text" id="title"/>
+            <label>Article</label>
+            <textarea id="art"></textarea>
+            <label>Image</label>
+            <input type="file" id="image">
+            <input type="submit" value="Add Blog" onclick="addBlog()">
+        </form>
+    </div>
+    <div id="allBlogs"> </div>
     <script src="script.js"></script>
 </body>
 
