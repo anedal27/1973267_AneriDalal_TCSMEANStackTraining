@@ -1,22 +1,21 @@
-function addBlog() {
+function addBlogPost() {
+    var post = readFormData();
+    if (post.title == "" || post.content == "") {
+        return;
+    }
     if (!sessionStorage["counter"]) {
         sessionStorage.setItem("counter", 1);
     }
-    var data = readFormData();
-    if(data.title == "" || data.art == "") {
-        return;
-    }
-    storeInSession(data);
+    storeInSession(post);
     var i = eval(sessionStorage.getItem("counter")) - 1;
-    // console.log(i);
-    addNewBlog(data, i);
+    addSingleBlogPost(post, i);
     resetData();
 }
 
 function readFormData() {
     var obj = {};
     obj.title = document.getElementById("title").value;
-    obj.art = document.getElementById("art").value;
+    obj.content = document.getElementById("content").value;
     if (typeof (document.getElementById("image").files[0]) != 'undefined') {
         obj.image = document.getElementById("image").files[0].name;
     } else {
@@ -25,65 +24,61 @@ function readFormData() {
     return obj;
 }
 
-function storeInSession(data) {
+function storeInSession(post) {
     var i = sessionStorage.getItem("counter");
-    sessionStorage.setItem("blog_" + i, JSON.stringify(data));
+    sessionStorage.setItem("post_" + i, JSON.stringify(post));
     i++;
     sessionStorage.setItem("counter", i);
 }
 
-function addNewBlog(blog, i) {
-    // select div tag where all blogs will be located
-    var allBlogs = document.getElementById("allBlogs");
+function addSingleBlogPost(post, i) {
+    // select div tag where all blog posts will be located
+    var allBlogPosts = document.getElementById("allBlogPosts");
 
-    // create a new column which will contain a single blog
-    var newRow = document.createElement('div');
-    newRow.className = 'row';
-    newRow.id = "blog_" + i;
-    // console.log(newRow.id)
+    // create a new row which will contain a single blog
+    var newPost = document.createElement('div');
+    newPost.className = 'col-5';
+    newPost.id = "post_" + i;
 
     // create an h2 tag where the title will go
-    var titleDiv = document.createElement('h2');
-    titleDiv.className = "blogTitle"
-    titleDiv.innerHTML = blog.title;
-    newRow.appendChild(titleDiv);
+    var titleTag = document.createElement('h2');
+    titleTag.className = "postTitle"
+    titleTag.innerHTML = post.title;
+    newPost.appendChild(titleTag);
 
-    // create a p tag where the article will go
-    var artDiv = document.createElement('p');
-    artDiv.className = "blogArt"
-    artDiv.innerHTML = blog.art;
-    newRow.appendChild(artDiv);
+    // create a div tag where the content will go
+    var contentTag = document.createElement('div');
+    contentTag.className = "postContent"
+    contentTag.innerHTML = post.content;
+    newPost.appendChild(contentTag);
 
-    // create an img tag where the image will go
-    if (blog.image != "none") {
-        // var imgTag = document.createElement('img');
-        // imgTag.src = blog.image;
-        // imgTag.className = "blogImage"
-        // newRow.appendChild(imgTag);
-        newRow.style.backgroundImage = 'url('+blog.image+')';
+    // if there is an image, set it as the background
+    if (post.image != "none") {
+        newPost.style.backgroundImage = 'url(' + post.image + ')';
+        newPost.style.backgroundRepeat = 'no-repeat';
+        newPost.style.backgroundSize = 'cover';
+        newPost.style.backgroundPosition = 'center';
     }
 
-    // append newRow to allBlogs
-    // allBlogs.appendChild(newRow);
-    allBlogs.insertBefore(newRow, allBlogs.firstChild);
+    // prepend newPost to allBlogPosts
+    allBlogPosts.insertBefore(newPost, allBlogPosts.firstChild);
 }
 
 function resetData() {
     document.getElementById("title").value = "";
-    document.getElementById("art").value = "";
+    document.getElementById("content").value = "";
     document.getElementById("image").value = "";
 }
 
-function loadAllBlogs() {
-    for (var j = 1; j < sessionStorage.length; j++) {
-        var data = retrieveFromSession(j);
-        var dataJson = JSON.parse(data);
-        console.log(dataJson);
-        addNewBlog(dataJson, j);
+function loadAllBlogPosts() {
+    for (var i = 1; i < sessionStorage.length; i++) {
+        var post = retrieveFromSession(i);
+        var postJSON = JSON.parse(post);
+        addSingleBlogPost(postJSON, i);
     }
 }
 
-function retrieveFromSession(j) {
-    var obj = sessionStorage.getItem("blog_" + j);
+function retrieveFromSession(i) {
+    var obj = sessionStorage.getItem("post_" + i);
     return obj;
 }
