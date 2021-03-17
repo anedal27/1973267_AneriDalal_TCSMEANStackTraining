@@ -7,7 +7,9 @@ function addBlog() {
         return;
     }
     storeInSession(data);
-    addNewBlog(data);
+    var i = eval(sessionStorage.getItem("counter")) - 1;
+    // console.log(i);
+    addNewBlog(data, i);
     resetData();
 }
 
@@ -30,36 +32,40 @@ function storeInSession(data) {
     sessionStorage.setItem("counter", i);
 }
 
-function addNewBlog(blog) {
+function addNewBlog(blog, i) {
     // select div tag where all blogs will be located
     var allBlogs = document.getElementById("allBlogs");
 
     // create a new column which will contain a single blog
-    var newCol = document.createElement('div');
-    newCol.className = 'row';
+    var newRow = document.createElement('div');
+    newRow.className = 'row';
+    newRow.id = "blog_" + i;
+    // console.log(newRow.id)
 
-    // create a div tag where the title will go
-    var titleDiv = document.createElement('div');
+    // create an h2 tag where the title will go
+    var titleDiv = document.createElement('h2');
     titleDiv.className = "blogTitle"
     titleDiv.innerHTML = blog.title;
-    newCol.appendChild(titleDiv);
+    newRow.appendChild(titleDiv);
 
-    // create a div tag where the article will go
-    var artDiv = document.createElement('div');
+    // create a p tag where the article will go
+    var artDiv = document.createElement('p');
     artDiv.className = "blogArt"
     artDiv.innerHTML = blog.art;
-    newCol.appendChild(artDiv);
+    newRow.appendChild(artDiv);
 
     // create an img tag where the image will go
     if (blog.image != "none") {
-        var imgTag = document.createElement('img');
-        imgTag.src = blog.image;
-        imgTag.className = "blogImage"
-        newCol.appendChild(imgTag);
+        // var imgTag = document.createElement('img');
+        // imgTag.src = blog.image;
+        // imgTag.className = "blogImage"
+        // newRow.appendChild(imgTag);
+        newRow.style.backgroundImage = 'url('+blog.image+')';
     }
 
-    // append newCol to allBlogs
-    allBlogs.appendChild(newCol);
+    // append newRow to allBlogs
+    // allBlogs.appendChild(newRow);
+    allBlogs.insertBefore(newRow, allBlogs.firstChild);
 }
 
 function resetData() {
@@ -73,7 +79,7 @@ function loadAllBlogs() {
         var data = retrieveFromSession(j);
         var dataJson = JSON.parse(data);
         console.log(dataJson);
-        addNewBlog(dataJson);
+        addNewBlog(dataJson, j);
     }
 }
 
