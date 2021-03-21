@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container" onload="updateCartTotal()">
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Shopping</span>
+        <div class="navbar" id="navbarText">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="checkout.html" class="nav-link">Checkout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="cartSize">Cart: 0</div>
+
+    <div class="card-deck">
+        <!-- Product 1 - HP -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6367/6367729_rd.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">HP - 2-in-1 14" Touch-Screen Chromebook</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$399.00</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+
+        <!-- Product 2 - ASUS -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6449/6449519_rd.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">ASUS - 14.0" Laptop - Intel Celeron N4020</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$199.99</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+
+        <!-- Product 3 - Dell -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6409/6409066ld.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">Dell - Inspiron 14 7000 2-in-1 - 14" Touch-Screen Laptop</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$929.99</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+
+        <!-- Product 4 - Samsung -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6398/6398414_rd.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">Samsung - Galaxy Book Flex Alpha 2-in-1 13.3" QLED Touch-Screen Laptop</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$999.99</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+
+        <!-- Product 5 - Macbook -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6418/6418601_sd.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">MacBook Pro 13.3" Laptop</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$1,299.99</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+
+        <!-- Product 6 - Lenovo -->
+        <div class="card">
+            <img class="card-img-top"
+                src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6426/6426709ld.jpg">
+            <div class="card-body">
+            </div>
+            <div class="card-footer">
+                <h5 class="card-title">Lenovo - Yoga 9i 14 2-in-1 14" Touch-Screen Laptop</h5>
+                <div class="card-text">Price:</div>
+                <div class="card-text price">$1,379.99</div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select class="form-control col-11 quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                    </select>
+                </div>
+                <input type="button" class="btn btn-primary addButton" onclick="addToCart()" value="Add to Cart">
+                <input type="button" class="btn btn-primary removeButton" onclick="removeFromCart()"
+                    value="Remove from Cart">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

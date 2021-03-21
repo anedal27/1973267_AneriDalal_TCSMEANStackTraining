@@ -1,0 +1,21 @@
+#cartSize {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.card {
+    min-width: 18rem;
+    max-width: 22rem;
+    margin: 20px 0;
+    padding: 20px 10px 0;
+}
+
+.card-footer {
+    border: none;
+    background-color: white;
+}
+
+#cart th, td {
+    border: 1px solid lightgray;
+}
