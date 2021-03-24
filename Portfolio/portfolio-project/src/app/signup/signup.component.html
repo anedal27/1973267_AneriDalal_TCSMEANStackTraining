@@ -1,4 +1,16 @@
 <div class="container-fluid">
     <h2>Registration Form</h2>
-    
+    <form [formGroup]="registrationRef" (ngSubmit)="addNewUser()">
+        <label>First Name: </label>
+        <input type="text" formControlName="fName" /><br />
+        <label>Last Name: </label>
+        <input type="text" formControlName="lName" /><br />
+        <label>Username: </label>
+        <input type="text" formControlName="user" /><br />
+        <label>Password: </label>
+        <input type="password" formControlName="pass" /><br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </form>
+    {{msg}}
 </div>
