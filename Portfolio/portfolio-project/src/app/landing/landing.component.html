@@ -1,1 +1,12 @@
-<p>landing works!</p>
+<div class="container-fluid">
+    <h2>My Portfolio</h2>
+    <h4>Welcome {{fName}} {{lName}}</h4>
+    <form [formGroup]="landingRef" (ngSubmit)="addContact()">
+        <label>Contact Name: </label>
+        <input type="text" formControlName="name" /><br />
+        <label>Phone Number: </label>
+        <input type="text" formControlName="phone" /><br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </form>
+</div>

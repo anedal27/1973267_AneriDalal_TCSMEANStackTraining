@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       let sessionPass = sessionUser.pass;
       if(pass == sessionPass) {
         this.msg = "Hooray";
+        sessionStorage.setItem("CurrentUser", user);
         this.router.navigate(["landing"]);
       } else {
         this.msg = "Nope";
