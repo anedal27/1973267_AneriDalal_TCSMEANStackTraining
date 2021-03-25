@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["landing"]);
       } else {
         this.msg = "Wrong password. Try again.";
-        this.loginRef.reset();
       }
     } else {
       this.msg = "Couldn't find your username";
