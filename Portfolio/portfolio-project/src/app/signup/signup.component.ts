@@ -21,10 +21,15 @@ export class SignupComponent implements OnInit {
   addNewUser() {
     // console.log(this.registrationRef.value);
     this.saveToSession();
-    this.msg = "Registraion completed";
   }
   saveToSession() {
     let key = this.registrationRef.value.user;
-    sessionStorage.setItem(key, JSON.stringify(this.registrationRef.value));
+    if (sessionStorage.getItem(key)) {
+      this.msg = "This username is unavailable";
+    } else {
+      sessionStorage.setItem(key, JSON.stringify(this.registrationRef.value));
+      this.msg = "Registration completed";
+      this.registrationRef.reset();
+    }
   }
 }

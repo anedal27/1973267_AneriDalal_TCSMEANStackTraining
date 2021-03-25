@@ -1,0 +1,15 @@
+nav span {
+    padding: 0 25px;
+}
+
+h3, form {
+    margin: 20px 25px;
+}
+
+label {
+    text-align: right;
+}
+.message {
+    margin: 20px 0;
+    color: red;
+}

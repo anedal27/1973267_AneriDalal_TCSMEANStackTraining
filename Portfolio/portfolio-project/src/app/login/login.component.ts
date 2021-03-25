@@ -25,14 +25,15 @@ export class LoginComponent implements OnInit {
       sessionUser = JSON.parse(sessionUser as string);
       let sessionPass = sessionUser.pass;
       if(pass == sessionPass) {
-        this.msg = "Hooray";
         sessionStorage.setItem("CurrentUser", user);
         this.router.navigate(["landing"]);
       } else {
-        this.msg = "Nope";
+        this.msg = "Wrong password. Try again.";
+        this.loginRef.reset();
       }
     } else {
-      this.msg = "Oops";
+      this.msg = "Couldn't find your username";
+      this.loginRef.reset();
     }
   }
 }
