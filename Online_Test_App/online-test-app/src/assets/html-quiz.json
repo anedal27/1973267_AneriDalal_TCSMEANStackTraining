@@ -1,0 +1,82 @@
+[
+    {
+        "question": "What does HTML stand for?",
+        "option1": "Hyperlinks and Text Markup Language",
+        "option2": "Hyper Text Markup Language",
+        "option3": "Home Tool Markup Language",
+        "option4": "Home Text Markup Language",
+        "answer": "2"
+    },
+    {
+        "question": "What is the correct HTML element for the largest heading?",
+        "option1": "<h1>",
+        "option2": "<h6>",
+        "option3": "<heading>",
+        "option4": "<head>",
+        "answer": "1"
+    },
+    {
+        "question": "What is the correct HTML for creating a hyperlink?",
+        "option1": "<a href='URL'>Website</a>",
+        "option2": "<a name='URL'>Website</a>",
+        "option3": "<a>URL</a>",
+        "option4": "<a url='URL'>Website</a>",
+        "answer": "1"
+    },
+    {
+        "question": "Which character is used to indicate an end tag?",
+        "option1": "<",
+        "option2": "/",
+        "option3": "^",
+        "option4": "*",
+        "answer": "2"
+    },
+    {
+        "question": "Which of these are all table elements?",
+        "option1": "<table><tr><tt>",
+        "option2": "<table><tr><td>",
+        "option3": "<table><head><foot>",
+        "option4": "<thead><body><tr>",
+        "answer": "2"
+    },
+    {
+        "question": "How can you make a numbered list?",
+        "option1": "<list>",
+        "option2": "<dl>",
+        "option3": "<ul>",
+        "option4": "<ol>",
+        "answer": "4"
+    },
+    {
+        "question": "What is the correct HTML for making a checkbox?",
+        "option1": "<input type='checkbox'>",
+        "option2": "<input type='check'>",
+        "option3": "<checkbox>",
+        "option4": "<check>",
+        "answer": "1"
+    },
+    {
+        "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+        "option1": "longdesc",
+        "option2": "src",
+        "option3": "title",
+        "option4": "alt",
+        "answer": "4"
+    },
+    {
+        "question": "In HTML, which attribute is used to specify that an input field must be filled out?",
+        "option1": "placeholder",
+        "option2": "validate",
+        "option3": "formvalidate",
+        "option4": "required",
+        "answer": "4"
+    },
+    {
+        "question": "Which HTML element is used to specify a header for a document or section?",
+        "option1": "<head>",
+        "option2": "<section>",
+        "option3": "<header>",
+        "option4": "<top>",
+        "answer": "3"
+    }
+]
