@@ -24,19 +24,31 @@ export class DisplayResultsComponent implements OnInit {
     q9: new FormControl(),
     q10: new FormControl()
   })
+  score: number = 0;
+  grade:string = "fail";
 
   constructor(public service: QuizService) {
     this.name = sessionStorage.getItem("quiz") as string;
-    this.service.loadQuizQuestions(this.name.toLowerCase()).subscribe(result => this.questions = result);
+    // this.service.loadQuizQuestions(this.name.toLowerCase()).subscribe(result => this.questions = result);
   }
 
   ngOnInit(): void {
-    let ans = JSON.parse(sessionStorage.getItem("answers")!);
-    console.log(ans);
-    for (let i = 1; i <= Object.keys(ans).length; i++) {
-      let key = "q" + i;
-      this.answers.push(ans[key]);
+    // for(let i = 1; i <= sessionStorage.length; i++) {
+    //   this.answers.push(sessionStorage.getItem("q"+i)!);
+    // }
+    // console.log(this.answers);
+    this.questions = JSON.parse(sessionStorage.getItem("questions")!);
+    console.log(this.questions);
+    this.displayScore();
+  }
+  displayScore() {
+    for (let q of this.questions) {
+      if (q.answer == q.response) {
+        this.score++;
+      }
     }
-    console.log(this.answers);
+    if (this.score / this.questions.length >= 0.70) {
+      this.grade = "Pass"
+    }
   }
 }

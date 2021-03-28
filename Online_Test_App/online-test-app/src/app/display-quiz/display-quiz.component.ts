@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Question } from '../question.model';
 import { QuizService } from '../quiz.service';
@@ -25,7 +25,7 @@ export class DisplayQuizComponent implements OnInit {
     q10: new FormControl()
   })
 
-  constructor(public service: QuizService, public router:Router) {
+  constructor(public service: QuizService, public router: Router) {
     this.name = sessionStorage.getItem("quiz") as string;
     this.service.loadQuizQuestions(this.name.toLowerCase()).subscribe(result => this.questions = result);
   }
@@ -33,9 +33,17 @@ export class DisplayQuizComponent implements OnInit {
   ngOnInit(): void { }
 
   checkAnswers() {
-    console.log(this.quizRef.value);
-    let answers = JSON.stringify(this.quizRef.value);
-    sessionStorage.setItem("answers", answers);
+    // console.log(this.quizRef.value);
+    let keys = Object.keys(this.quizRef.controls);
+    // Object.keys(this.quizRef.controls).forEach(key => sessionStorage.setItem(key, this.quizRef.get(key)!.value));
+    for (let i = 1; i <= keys.length; i++) {
+      this.questions[i-1].response = this.quizRef.get("q"+i)!.value;
+    }
+    // Object.keys(this.quizRef.controls).forEach(key => sessionStorage.setItem(key, this.quizRef.get(key)!.value));
+    // console.log(this.questions)
+    sessionStorage.setItem("questions", JSON.stringify(this.questions));
+    // let answers = JSON.stringify(this.quizRef.value);
+    // sessionStorage.setItem("answers", answers);
     this.router.navigate(["results"]);
   }
 }
