@@ -6,7 +6,8 @@
         "option2": "Hyper Text Markup Language",
         "option3": "Home Tool Markup Language",
         "option4": "Home Text Markup Language",
-        "answer": "2"
+        "answer": "2",
+        "flag": true
     },
     {
         "qNum": "q2",

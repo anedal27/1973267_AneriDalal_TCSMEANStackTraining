@@ -1,7 +1,39 @@
-label {
+h1 {
+    padding-top: 30px;
+}
+
+h5 {
+    padding: 10px 0 15px;
+}
+
+h3 {
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+div div {
+    border-bottom: 1px solid lightgray;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+}
+
+li {
+    padding: 7px 0px 7px 30px;
+    margin: 1px 0;
+}
+
+.response {
     color: red;
+    list-style: "\2718";
+    font-weight: bold;
 }
 
 .correct {
-    color: green;
+    color: limegreen;
+    list-style: "\2713";
+    font-weight: bold;
 }

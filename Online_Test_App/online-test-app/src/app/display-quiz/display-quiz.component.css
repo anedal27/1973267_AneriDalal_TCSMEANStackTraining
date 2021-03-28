@@ -1,0 +1,26 @@
+h1 {
+    padding-top: 30px;
+}
+
+h3 {
+    padding: 10px 0 15px;
+}
+
+h5 {
+    padding-bottom: 30px;
+}
+
+.form-check {
+    background-color: aliceblue;
+    padding: 7px 0px 0px 30px;
+    margin: 1px 0;
+}
+
+.form-check:hover {
+    background-color: lightskyblue;
+}
+
+.btn {
+    margin: 20px 15px;
+    padding: 10px 20px;
+}

@@ -1,19 +1,41 @@
-<h2>{{name}} QUIZ</h2>
-<form [formGroup]="quizRef" (ngSubmit)="checkAnswers()">
-    <div *ngFor="let q of questions" >
-        <h3>{{q.question}}</h3>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" [formControlName]=q.qNum value="1"> {{q.option1}}
+<div class="container">
+    <h1>{{name}} Quiz</h1>
+    <form [formGroup]="quizRef" (ngSubmit)="checkAnswers()">
+        <div *ngFor="let q of questions">
+            <div *ngIf="q.flag">
+                <h3>Question {{q.qNum.substring(1)}} of {{questions.length}}:</h3>
+                <h5>{{q.question}}</h5>
+                <div class="form-check">
+                    <label>
+                        <input class="form-check-input" type="radio" required [formControlName]=q.qNum value="1">
+                        {{q.option1}}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input class="form-check-input" type="radio" required [formControlName]=q.qNum value="2">
+                        {{q.option2}}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input class="form-check-input" type="radio" required [formControlName]=q.qNum value="3">
+                        {{q.option3}}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input class="form-check-input" type="radio" required [formControlName]=q.qNum value="4">
+                        {{q.option4}}
+                    </label>
+                </div>
+                <div class="row">
+                    <input type="button" class="btn btn-primary" value="Next >" (click)="nextQuestion(q.qNum)"
+                        *ngIf="q.qNum != 'q10'" [disabled]="!quizRef.valid">
+                    <input type="submit" class="btn btn-primary" value="Submit Answers" *ngIf="q.qNum == 'q10'"
+                        [disabled]="!quizRef.valid">
+                </div>
+            </div>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" [formControlName]=q.qNum value="2"> {{q.option2}}
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" [formControlName]=q.qNum value="3"> {{q.option3}}
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" [formControlName]=q.qNum value="4"> {{q.option4}}
-        </div>
-    </div>
-    <input type="submit" value="Submit Answers">
-</form>
+    </form>
+</div>

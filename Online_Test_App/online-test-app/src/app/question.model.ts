@@ -7,5 +7,6 @@ export class Question {
         public option3: string,
         public option4: string,
         public answer: string,
-        public response: string) { }
+        public response: string,
+        public flag: boolean) { }
 }

@@ -32,18 +32,22 @@ export class DisplayQuizComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  checkAnswers() {
-    // console.log(this.quizRef.value);
-    let keys = Object.keys(this.quizRef.controls);
-    // Object.keys(this.quizRef.controls).forEach(key => sessionStorage.setItem(key, this.quizRef.get(key)!.value));
-    for (let i = 1; i <= keys.length; i++) {
-      this.questions[i-1].response = this.quizRef.get("q"+i)!.value;
+  nextQuestion(qNum: string) {
+    let num = eval(qNum.charAt(1));
+    for (let i = 0; i < this.questions.length; i++) {
+      this.questions[i].flag = false;
     }
-    // Object.keys(this.quizRef.controls).forEach(key => sessionStorage.setItem(key, this.quizRef.get(key)!.value));
-    // console.log(this.questions)
+    console.log(num);
+    this.questions[num].flag = true;
+    console.log(this.questions[num]);
+  }
+
+  checkAnswers() {
+    let keys = Object.keys(this.quizRef.controls);
+    for (let i = 1; i <= keys.length; i++) {
+      this.questions[i - 1].response = this.quizRef.get("q" + i)!.value;
+    }
     sessionStorage.setItem("questions", JSON.stringify(this.questions));
-    // let answers = JSON.stringify(this.quizRef.value);
-    // sessionStorage.setItem("answers", answers);
     this.router.navigate(["results"]);
   }
 }

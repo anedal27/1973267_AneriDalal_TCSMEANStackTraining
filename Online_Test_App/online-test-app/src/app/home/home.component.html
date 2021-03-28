@@ -1,4 +1,12 @@
-<div>
-    Choose a quiz with dropdown<br />
-    <input type="button" value="Start Quiz" (click)="loadQuiz()">
+<div class="container">
+    <h2>Test your skills with a quiz</h2>
+    <form class="form-inline row" #quizRef="ngForm" (ngSubmit)="loadQuiz(quizRef.value)">
+        <select ngModel class="form-control col-4 offset-3" name="quiz" required>
+            <option value="" selected disabled hidden>Choose a quiz</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">Javascript</option>
+          </select>
+        <input type="submit" class="btn btn-primary col1 offset-1" value="Start Quiz" [disabled]="!quizRef.valid">
+    </form>
 </div>
