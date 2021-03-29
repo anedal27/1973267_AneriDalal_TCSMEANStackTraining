@@ -1,1 +1,28 @@
-<p>task-form works!</p>
+<div>
+    <h3>Add a Task</h3>
+    <form #taskRef="ngForm" (ngSubmit)="addTask(taskRef.value)">
+        <mat-form-field>
+            <mat-label>Id</mat-label>
+            <input matInput type="text" name="id" ngModel />
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" name="name" ngModel />
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>Task</mat-label>
+            <textarea matInput rows="3" name="desc" ngModel></textarea>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+            <mat-label>Deadline</mat-label>
+            <input matInput [matDatepicker]="picker" name="deadline" ngModel>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br />
+        <button mat-stroked-button color="primary" type="submit">Store</button>
+    </form>
+</div>

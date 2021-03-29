@@ -1,0 +1,18 @@
+mat-toolbar {
+    background-color: navy;
+    color: white;
+}
+
+app-task-form {
+    float: left;
+    width: 15%;
+    padding: 2.5%;
+    /* padding-right: 0; */
+}
+
+app-display-tasks {
+    float: right;
+    width: 70%;
+    padding: 2.5%;
+    background-color: aliceblue;
+}
