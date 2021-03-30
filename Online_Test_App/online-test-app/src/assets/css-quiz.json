@@ -1,0 +1,93 @@
+[
+    {
+        "qNum": "q1",
+        "question": "What does CSS stand for?",
+        "option1": "Computer Style Sheets",
+        "option2": "Creative Style Sheets",
+        "option3": "Cascading Style Sheets",
+        "option4": "Colorful Style Sheets",
+        "answer": "3",
+        "flag": true
+    },
+    {
+        "qNum": "q2",
+        "question": "What HTML attribute is used to define inline styles?",
+        "option1": "style",
+        "option2": "class",
+        "option3": "styles",
+        "option4": "font",
+        "answer": "1"
+    },
+    {
+        "qNum": "q3",
+        "question": "What is the correct CSS syntax?",
+        "option1": "body:color=black;",
+        "option2": "{body:color=black;}",
+        "option3": "body {color: black;}",
+        "option4": "{body;color:black;}",
+        "answer": "3"
+    },
+    {
+        "qNum": "q4",
+        "question": "How do you insert a comment in a CSS file?",
+        "option1": "// This is a comment",
+        "option2": "' This is a comment",
+        "option3": "// This is a comment //",
+        "option4": "/* This is a comment */",
+        "answer": "4"
+    },
+    {
+        "qNum": "q5",
+        "question": "Which CSS property controls the text size?",
+        "option1": "text-style",
+        "option2": "font-style",
+        "option3": "text-size",
+        "option4": "font-size",
+        "answer": "4"
+    },
+    {
+        "qNum": "q6",
+        "question": "What is the correct CSS syntax for making all the <p> elements bold?",
+        "option1": "<p style='text-size:bold;'>",
+        "option2": "p {text-size:bold;}",
+        "option3": "p {font-weight:bold;}",
+        "option4": "<p style='font-size:bold;'>",
+        "answer": "3"
+    },
+    {
+        "qNum": "q7",
+        "question": "How do you make each word in a text start with a capital letter?",
+        "option1": "text-transform:capitalize",
+        "option2": "You can't do that with CSS",
+        "option3": "text-style:capitalize",
+        "option4": "transform:capitalize",
+        "answer": "1"
+    },
+    {
+        "qNum": "q8",
+        "question": "How do you select an element with id 'demo'?",
+        "option1": "*demo",
+        "option2": "#demo",
+        "option3": "demo",
+        "option4": ".demo",
+        "answer": "2"
+    },
+    {
+        "qNum": "q9",
+        "question": "How do you select all p elements inside a div element?",
+        "option1": "div p",
+        "option2": "div + p",
+        "option3": "div.p",
+        "option4": "div->p",
+        "answer": "1"
+    },
+    {
+        "qNum": "q10",
+        "question": "What is the default value of the position property?",
+        "option1": "abolute",
+        "option2": "static",
+        "option3": "relative",
+        "option4": "fixed",
+        "answer": "2"
+    }
+]

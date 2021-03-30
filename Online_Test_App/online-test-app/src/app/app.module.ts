@@ -8,7 +8,8 @@ import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DisplayResultsComponent } from './display-results/display-results.component';
-import { MyAuthGuard } from './myauthguard';
+import { QuizAuthGuard } from './quizauthguard';
+import { ResultsAuthGuard } from './resultsauthguard';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MyAuthGuard } from './myauthguard';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [MyAuthGuard],
+  providers: [QuizAuthGuard, ResultsAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
