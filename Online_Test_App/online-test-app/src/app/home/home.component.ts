@@ -20,8 +20,4 @@ export class HomeComponent implements OnInit {
       this.router.navigate(["quiz"]);
     }
   }
-
-  selected(quizRef: any) {
-
-  }
 }
