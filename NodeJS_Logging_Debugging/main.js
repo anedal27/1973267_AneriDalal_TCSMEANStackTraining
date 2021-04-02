@@ -15,12 +15,13 @@ let records = rl.questionInt("How many records do you want to store? ");
 
 // Take first name, last name, gender, email and add to array
 for (let i = 0; i < records; i++) {
+    console.log(`Record ${i + 1}`)
     let fname = rl.question(`(${i + 1}) Enter first name: `);
     let lname = rl.question(`(${i + 1}) Enter last name: `);
     let gender = rl.question(`(${i + 1}) Enter gender: `);
     let email = rl.questionEMail(`(${i + 1}) Enter email: `);
-    people.push({ "fname": fname, "lname": lname, "gender": gender, "email": email });
-    console.log("Recorded")
+    let date = new Date();
+    people.push({ "fname": fname, "lname": lname, "gender": gender, "email": email, "date":date.toLocaleString() });
 }
 
 // Store people in JSON file

@@ -3,18 +3,21 @@
         "fname": "John",
         "lname": "Doe",
         "gender": "male",
-        "email": "johndoe@mail.com"
+        "email": "johnDoe@email.com",
+        "date": "4/2/2021, 5:05:23 PM"
     },
     {
         "fname": "Jane",
         "lname": "Doe",
         "gender": "female",
-        "email": "janedoe@mail.com"
+        "email": "janeDoe@email.com",
+        "date": "4/2/2021, 5:05:30 PM"
     },
     {
         "fname": "Briar",
         "lname": "Rose",
         "gender": "female",
-        "email": "aurora@mail.com"
+        "email": "princessAurora@email.com",
+        "date": "4/2/2021, 5:05:38 PM"
     }
 ]
