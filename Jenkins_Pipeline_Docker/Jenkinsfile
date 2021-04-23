@@ -17,7 +17,7 @@ pipeline {
 		}
 		stage("Test"){
 			steps{
-				sh "node app.js"
+				sh "node Jenkins_Pipeline_Docker/app.js"
 			}
 		}
 		stage("Release"){
